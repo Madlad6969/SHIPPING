@@ -174,15 +174,115 @@
      <a href="#">Rejected Direct/Indirect/Transporter Expenses</a>
  </div>
 </div>
-    
 
-<!-- OTHER ICD MENUS -->
-<a href="#">Import Reports</a>
-<a href="#">Pre Transfer</a>
-<a href="#">Management Operations</a>
-<a href="#">Yard Management</a>
-<a href="#">Asset Management</a>
+<!--IMPORT REPORTS-->
+<div class="sub-menu">
+<a href="#" class="sub-menu-title" id="importReportsMenu">Import Reports</a>
+
+<!-- Import Reports Dropdown -->
+   <div class="dropdown-menu" id="importReportsDropdown">
+     <a href="#">Containers Available At Terminal</a>
+     <a href="#">Vessel Voyage List</a>
+     <a href="#">FCL Stock Report</a>
+     <a href="#">Container Stock Report</a>
+     <a href="#">LCL Stock Report</a>
+     <a href="#">Loose Cargo Inventory Stock</a>
+     <a href="#">Empty Container Stock Report</a>
+     <a href="#">Discharged Container Details</a>
+     <a href="#">Stripping Report</a>
+     <a href="#">Container Delay Report</a>
+     <a href="#">Stripping Approval Details</a>
+     <a href="#">Gate Out FCL Container Report</a>
+     <a href="#">Gate Out Loose Cargo Report</a>
+     <a href="#">Gate Out Vehicle Details</a>
+     <a href="#">Gate Out Direct Delivery Cargo Report</a>
+     <a href="#">LCL/Direct Gate Pass Details</a>
+     <a href="#">Empty Container Gate Out Details</a>
+     <a href="#">Empty Container Booking Report</a>
+     <a href="#">Delivery Note Details</a>
+     <a href="#">View Uploaded Doc</a>
+     <a href="#">Manifested Weight Vs Actual Weight</a>
+     <a href="#">Transporter Invoice Details</a>
+     <a href="#">Access Logs</a>
+     <a href="#">Pending Details</a>
+     <a href="#">Discharged BL Report</a>
+     <a href="#">Audit Logs</a>
+     <a href="#">Change Logs</a>
+     <a href="#">Stripping Booking List</a>
+     <a href="#">Direct Stripping Report</a>
+     <a href="#">Case Management Register</a>
+     <a href="#">Nomination Report</a>
+     <a href="#">Truck OverStay Report</a>
+     <a href="#">LCL Stripping Report</a>
+     <a href="#">Container Placement Report</a>
+     <a href="#">Yard Loading Confirmation Report</a>
+     <a href="#">Pending Reload Report</a>
+     <a href="#">Pending Pre Transfer (Transporter)</a>
+     <a href="#">FCL Loading Permit Details</a>
+     <a href="#">Gate In Report</a>
+     <a href="#">Verification Booking List</a>
+     <a href="#">Seal Report</a>
+     <a href="#">Document Verification (Gate Out) Details</a>
+     <a href="#">Yard Loading Report</a>
+ </div>
 </div>
+
+<!--PRE TRANSFER-->
+<div class="sub-menu">
+<a href="#" class="sub-menu-title" id="preTransferMenu">Pre Transfer</a>
+
+<!-- Pre Transfer Dropdown -->
+    <div class="dropdown-menu" id="preTransferDropdown">
+     <a href="#">Truck Details</a>
+     <a href="#">Add PreTransfer</a>
+     <a href="#">Modify PreTransfer</a>
+     <a href="#">Print PreTransfer</a>
+     <a href="#">Pending PreTransfer Details</a>
+     <a href="#">Transporter Wise Pre Transfers</a>
+     <a href="#">Upload Transporter Excel</a>
+     <a href="#">Container Tracking</a>
+     <a href="#">Pre Transfer Statistics</a>
+    </div>
+ </div>
+
+<!--MANAGEMENT OPERATIONS-->
+<div class="sub-menu">
+<a href="#" class="sub-menu-title" id="managementOperationsMenu">Management Operations</a>
+
+<!--MANAGEMENT OPERATIONS DROPDOWN-->
+      <div class="dropdown-menu" id="managementOperationsDropdown">
+         <a href="#">Modify No Of Pkgs(Gate Pass)</a>
+         <a href="#">Empty Container Status</a>
+         <a href="#">Empty Container Booking Status</a>
+         <a href="#">DO Details</a>
+         <a href="#">Modify No Of Pkgs(Simple Vehicle)</a>
+         <a href="#">Modify Truck Details</a>
+    </div>
+ </div>
+
+<!--Yard Management-->
+<div class="sub-menu">
+<a href="#" class="sub-menu-title" id="yardManagementMenu">Yard Management</a>
+
+<!--Yard Management Dropdown-->
+        <div class="dropdown-menu" id="yardManagementDropdown">
+            <a href="#">Yard Viewer Row Wise</a>
+    </div>
+ </div>
+
+<!--Asset Management-->
+<div class="sub-menu">
+<a href="#" class="sub-menu-title" id="assetManagementMenu">Asset Management</a>
+
+<!--Asset Management Dropdown-->
+        <div class="dropdown-menu" id="assetManagementDropdown">
+            <a href="#">Asset Register</a>
+            
+    </div>
+ </div>
+
+</div>
+
 
 <!-- CFS SUB NAVIGATION -->
 <div class="sub-nav" id="cfsSubNav">
@@ -452,7 +552,7 @@ body {
 .dropdown-menu a {
     display: block;
     width: 100%;
-    height: 24px;
+    height: 29px;
     margin: 0 !important;
     padding: 8px 12px !important;
     color: white;
@@ -476,9 +576,7 @@ body {
     background: #124a68;
 }
 
-/* =====================================================
-   RESPONSIVE DESIGN
-   ===================================================== */
+/* RESPONSIVE DESIGN*/
 
 @media (max-width:1200px){
 .top-header{
@@ -866,6 +964,27 @@ const importBillingDropdown = document.getElementById("importBillingDropdown");
 const payablesMenu = document.getElementById("payablesMenu");
 const payablesDropdown = document.getElementById("payablesDropdown");
 
+/*IMPORT REPORTS DROPDOWN*/
+const importReportsMenu = document.getElementById("importReportsMenu");
+const importReportsDropdown = document.getElementById("importReportsDropdown");
+
+/*PRE TRANSFER DROPDOWN*/
+const preTransferMenu = document.getElementById("preTransferMenu");
+const preTransferDropdown = document.getElementById("preTransferDropdown");
+
+/* MANAGEMENT OPERATIONS DROPDOWN */
+const managementOperationsMenu = document.getElementById("managementOperationsMenu");
+const managementOperationsDropdown = document.getElementById("managementOperationsDropdown");
+
+/*YARD MANAGEMENT DROPDOWN*/
+const yardManagementMenu = document.getElementById("yardManagementMenu");
+const yardManagementDropdown = document.getElementById("yardManagementDropdown");
+
+/* ASSET MANAGEMENT DROPDOWN */
+const assetManagementMenu = document.getElementById("assetManagementMenu");
+const assetManagementDropdown = document.getElementById("assetManagementDropdown");
+
+
 
 /* CLOSE MASTERS DROPDOWN */
 function closeMastersDropdown() {
@@ -889,6 +1008,36 @@ function closeImportBillingDropdown() {
 function closePayablesDropdown() {
     payablesDropdown.style.display = "none";
     payablesMenu.classList.remove("active");
+}
+
+/* CLOSE IMPORT REPORTS DROPDOWN */
+function closeImportReportsDropdown() {
+    importReportsDropdown.style.display = "none";
+    importReportsMenu.classList.remove("active");
+}
+
+/* CLOSE PRE TRANSFER DROPDOWN */
+function closePreTransferDropdown() {
+    preTransferDropdown.style.display = "none";
+    preTransferMenu.classList.remove("active");
+}
+
+/*CLOSE MANAGEMENT OPERATIONS DROPDOWN*/
+function closeManagementOperationsDropdown() {
+    managementOperationsDropdown.style.display = "none";
+    managementOperationsMenu.classList.remove("active");
+}
+
+/* CLOSE YARD MANAGEMENT DROPDOWN */
+function closeYardManagementDropdown() {
+    yardManagementDropdown.style.display = "none";
+    yardManagementMenu.classList.remove("active");
+}
+
+/* CLOSE ASSET MANAGEMENT DROPDOWN */
+function closeAssetManagementDropdown() {
+    assetManagementDropdown.style.display = "none";
+    assetManagementMenu.classList.remove("active");
 }
 
 /* ICD OPERATIONS */
@@ -976,7 +1125,16 @@ accountsMenu.addEventListener("click", function (e) {
 /* MASTERS DROPDOWN */
 mastersMenu.addEventListener("click", function (e) {
     e.preventDefault();
+    e.stopPropagation();
 
+    closeOperationsDropdown();
+    closeImportBillingDropdown();
+    closePayablesDropdown();
+    closeImportReportsDropdown();
+    closePreTransferDropdown();
+    closeManagementOperationsDropdown();
+    closeYardManagementDropdown();
+    closeAssetManagementDropdown();
     if (mastersDropdown.style.display == "block") {
         closeMastersDropdown();
     } else {
@@ -989,9 +1147,16 @@ mastersMenu.addEventListener("click", function (e) {
 
 operationsMenu.addEventListener("click", function (e) {
     e.preventDefault();
+    e.stopPropagation();
 
     closeMastersDropdown();
-
+    closeImportBillingDropdown();
+    closePayablesDropdown();
+    closeImportReportsDropdown();
+    closePreTransferDropdown();
+    closeManagementOperationsDropdown();
+    closeYardManagementDropdown();
+    closeAssetManagementDropdown();
     if (operationsDropdown.style.display == "block") {
         closeOperationsDropdown();
     } else {
@@ -1011,7 +1176,11 @@ importBillingMenu.addEventListener("click", function (e) {
     closeMastersDropdown();
     closeOperationsDropdown();
     closePayablesDropdown();
-
+    closeImportReportsDropdown();
+    closePreTransferDropdown();
+    closeManagementOperationsDropdown();
+    closeYardManagementDropdown();
+    closeAssetManagementDropdown();
     if (importBillingDropdown.style.display === "block") {
        closeImportBillingDropdown();
 
@@ -1033,7 +1202,11 @@ payablesMenu.addEventListener("click", function (e) {
     closeMastersDropdown();
     closeOperationsDropdown(); 
     closeImportBillingDropdown();  
-
+    closeImportReportsDropdown();
+    closePreTransferDropdown();
+    closeManagementOperationsDropdown();
+    closeYardManagementDropdown();
+    closeAssetManagementDropdown();
     if (payablesDropdown.style.display === "block") {
         closePayablesDropdown();
     } else {
@@ -1042,42 +1215,168 @@ payablesMenu.addEventListener("click", function (e) {
     }
 });
 
-/* CLOSE DROPDOWN WHEN CLICKING OUTSIDE */
+/* IMPORT REPORTS DROPDOWN */
+importReportsMenu.addEventListener("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    /* Close other dropdowns */
+    closeMastersDropdown();
+    closeOperationsDropdown();
+    closeImportBillingDropdown();
+    closePayablesDropdown();
+    closePreTransferDropdown();
+    closeManagementOperationsDropdown();
+    closeYardManagementDropdown();
+    closeAssetManagementDropdown();
+    if (importReportsDropdown.style.display === "block") {
+        closeImportReportsDropdown();
+    } else {
+        importReportsDropdown.style.display = "block";
+        importReportsMenu.classList.add("active");
+    }
+});
+
+/* PRE TRANSFER DROPDOWN */
+preTransferMenu.addEventListener("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    /* Close other dropdowns */
+    closeMastersDropdown();
+    closeOperationsDropdown();
+    closeImportBillingDropdown();
+    closePayablesDropdown();
+    closeImportReportsDropdown();
+    closeManagementOperationsDropdown();
+    closeYardManagementDropdown();
+    closeAssetManagementDropdown();
+    if (preTransferDropdown.style.display === "block") {
+        closePreTransferDropdown();
+    } else {
+        preTransferDropdown.style.display = "block";
+        preTransferMenu.classList.add("active");
+    }
+});
+
+/* MANAGEMENT OPERATIONS DROPDOWN */
+managementOperationsMenu.addEventListener("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation();    
+
+    /* Close other dropdowns */
+    closeMastersDropdown();
+    closeOperationsDropdown();
+    closeImportBillingDropdown();
+    closePayablesDropdown();
+    closeImportReportsDropdown();
+    closePreTransferDropdown();
+    closeYardManagementDropdown();
+    closeAssetManagementDropdown();
+    if (managementOperationsDropdown.style.display === "block") {
+        closeManagementOperationsDropdown();
+    } else {
+        managementOperationsDropdown.style.display = "block";
+        managementOperationsMenu.classList.add("active");
+    }
+});
+
+/* YARD MANAGEMENT DROPDOWN */
+yardManagementMenu.addEventListener("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    /* Close other dropdowns */
+    closeMastersDropdown();
+    closeOperationsDropdown();
+    closeImportBillingDropdown();
+    closePayablesDropdown();
+    closeImportReportsDropdown();
+    closePreTransferDropdown();
+    closeManagementOperationsDropdown();
+    closeAssetManagementDropdown();
+    if (yardManagementDropdown.style.display === "block") {
+        closeYardManagementDropdown();
+    } else {
+        yardManagementDropdown.style.display = "block";
+        yardManagementMenu.classList.add("active");
+    }
+});
+
+/* ASSET MANAGEMENT DROPDOWN */
+assetManagementMenu.addEventListener("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation();    
+
+    /* Close other dropdowns */
+    closeMastersDropdown();
+    closeOperationsDropdown();
+    closeImportBillingDropdown();  
+    closePayablesDropdown();
+    closeImportReportsDropdown();
+    closePreTransferDropdown();
+    closeManagementOperationsDropdown();
+    closeYardManagementDropdown();
+    if (assetManagementDropdown.style.display === "block") {
+        closeAssetManagementDropdown();
+    } else {
+        assetManagementDropdown.style.display = "block";
+        assetManagementMenu.classList.add("active");
+    }
+});
+
+
+/* CLOSE ALL DROPDOWNS WHEN CLICKING OUTSIDE */
 document.addEventListener("click", function (e) {
+
     if (!mastersMenu.contains(e.target) &&
         !mastersDropdown.contains(e.target)) {
         closeMastersDropdown();
     }
 
-
-});
-
-/* CLOSE OPERATIONS DROPDOWN WHEN CLICKING OUTSIDE */
-document.addEventListener("click", function (e) {
     if (!operationsMenu.contains(e.target) &&
         !operationsDropdown.contains(e.target)) {
         closeOperationsDropdown();
     }
-});
-
-/* CLOSE IMPORT BILLING WHEN CLICKING OUTSIDE */
-
-document.addEventListener("click", function (e) {
 
     if (!importBillingMenu.contains(e.target) &&
         !importBillingDropdown.contains(e.target)) {
-       closeImportBillingDropdown();
-
+        closeImportBillingDropdown();
     }
 
-});
-
-/* CLOSE PAYABLES WHEN CLICKING OUTSIDE */
-document.addEventListener("click", function (e) {   
     if (!payablesMenu.contains(e.target) &&
         !payablesDropdown.contains(e.target)) {
         closePayablesDropdown();
     }
+
+    if (!importReportsMenu.contains(e.target) &&
+        !importReportsDropdown.contains(e.target)) {
+        closeImportReportsDropdown();
+    }
+
+    if (!preTransferMenu.contains(e.target) &&
+        !preTransferDropdown.contains(e.target)) {
+        closePreTransferDropdown();
+    }
+
+    if (!managementOperationsMenu.contains(e.target) &&
+        !managementOperationsDropdown.contains(e.target)) {
+        closeManagementOperationsDropdown();
+    }   
+
+    if (!yardManagementMenu.contains(e.target) &&
+        !yardManagementDropdown.contains(e.target)) {
+        closeYardManagementDropdown();
+    }
+
+    if (!assetManagementMenu.contains(e.target) &&
+        !assetManagementDropdown.contains(e.target)) {
+        closeAssetManagementDropdown();
+    }
+
 });
+
+
+
 </script>
 
