@@ -82,7 +82,20 @@
         <a href="#">Vessel Discharge Details</a>
         <a href="#">Container Discharge Details</a>
         <a href="#">Gate In</a>
-        <a href="#">FCL</a>
+    <!-- FCL SUBMENU -->
+    <div class="submenu-item">
+        <a href="#">FCL<span class="arrow">></span></a>
+        <div class="submenu">
+            <a href="#">Verification</a>
+            <a href="#">Pending Verification</a>
+            <a href="#">Seal Cutting Details</a>
+            <a href="#">Seal Cut Not Completed</a>
+            <a href="#">FCL Container Loading Permit</a>
+            <a href="#">Truck Gate In [Delivery]</a>
+            <a href="#">Delivery</a>
+            <a href="#">Verification Booked Not Verified</a>
+        </div>
+    </div>
         <a href="#">Change Of Status</a>
         <a href="#">Yard Position</a>
         <a href="#">LCL [ SHED/WAREHOUSE ]</a>
@@ -555,7 +568,7 @@ body {
     height: 29px;
     margin: 0 !important;
     padding: 8px 12px !important;
-    color: white;
+    color: yellow;
     background: #075477;
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
@@ -566,6 +579,66 @@ body {
 }
 
 .dropdown-menu a:hover {
+    background: black;
+}
+
+/* NESTED SUBMENU*/
+
+.submenu-item {
+    position: relative;
+}
+
+/* FCL main item */
+.submenu-item > a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Arrow */
+.arrow {
+    margin-left: 15px;
+    font-size: 14px;
+}
+
+/* SECOND-LEVEL MENU */
+.submenu {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+
+    min-width: 300px;
+
+    background: #263b52;
+    z-index: 10000;
+}
+
+/* Show submenu when mouse is over FCL */
+.submenu-item:hover > .submenu {
+    display: block;
+}
+
+/* Submenu links */
+.submenu a {
+    display: block;
+    width: 100%;
+    min-height: 29px;
+    padding: 8px 12px !important;
+
+    color: white;
+    background: #263b52;
+    text-decoration: none;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+    text-align: left;
+    white-space: nowrap;
+}
+
+/* Submenu hover */
+.submenu a:hover {
     background: #2c7194;
 }
 
