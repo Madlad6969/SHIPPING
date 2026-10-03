@@ -98,11 +98,57 @@
     </div>
         <a href="#">Change Of Status</a>
         <a href="#">Yard Position</a>
-        <a href="#">LCL [ SHED/WAREHOUSE ]</a>
-        <a href="#">LCL (Direct Delivery)</a>
-        <a href="#">EMPTY</a>
-        <a href="#">Container Details Change Request</a>
-        <a href="#">Add HBL (HALF Container)</a>
+        <!--LCL [SHED/WAREHOUSE] SUBMENU-->
+        <div class="submenu-item">
+            <a href="#">LCL [ SHED/WAREHOUSE ]<span class="arrow">></span></a>
+            <div class="submenu">
+                <a href="#">Stripping Order</a>
+                <a href="#">Stripping Tally</a>
+                <a href="#">LCL Loading Permit</a>
+                <a href="#">Truck Gate In [Delivery]</a>
+                <a href="#">LCL Delivery Note</a>
+                <a href="#">LCL DELIVERY NOTE/GATE PASS</a>
+            </div>
+        </div>
+        <!--LCL (Direct Delivery)-->
+        <div class="submenu-item">
+            <a href="#">LCL (Direct Delivery)<span class="arrow">></span></a>
+            <div class="submenu">
+                <a href="#">Pre Loading Permit</a>
+                <a href="#">Truck Gate In </a>
+                <a href="#">Stripping Order</a>
+                <a href="#">Stripping Tally</a>
+                <a href="#"> Delivery Note/Gate Pass</a>
+            </div>
+        </div>
+        <!--EMPTY-->
+        <div class="submenu-item">
+             <a href="#">EMPTY<span class="arrow">></span></a>
+             <div class="submenu">
+                <a href="#">Booking</a>
+                <a href="#">Truck Gate In</a>
+                <a href="#">Empty Truck  Container Allocation</a>
+                <a href="#">Empty Truck Loading Confirmation</a>
+                <a href="#"> Delivery Note/Gate Pass</a>
+                <a href="#"> Search Container/Booking/Truck</a>
+            </div>
+        </div>
+        <!--Container Details Change Request-->
+        <div class="submenu-item">
+            <a href="#">Container Details Change Request<span class="arrow">></span></a>
+            <div class="submenu">
+                <a href="#">Initiate</a>
+                <a href="#">Approve</a>
+            </div>
+        </div>
+        <!--Add HBL (HALF Container)-->
+        <div class="submenu-item">
+            <a href="#">Add HBL (HALF Container)<span class="arrow">></span></a>
+            <div class="submenu">
+                <a href="#">Initiate</a>
+                <a href="#">Approve</a>
+            </div>
+        </div>
         <a href="#">Change Password</a>
         <a href="#">Rejected Document [Gate Out]</a>
         <a href="#">Yard Loading Confirmation</a>
@@ -110,9 +156,37 @@
         <a href="#">Truck Gate Out [Delivery]</a>
         <a href="#">Delivery Order [Chassis]</a>
         <a href="#">Document Verification [Gate Out]</a>
-        <a href="#">Manifest Details</a>
-        <a href="#">AUCTION</a>
-        <a href="#">DESTRUCTION</a>
+        <!--Manifest Details-->
+        <div class="submenu-item">
+            <a href="#">Manifest Details<span class="arrow">></span></a>
+            <div class="submenu">
+                <a href="#"> Active Manifest Details</a>
+                <a href="#">CPOD/Simple Transfer</a>
+                <a href="#">Transfer/Cancelled Details</a>
+                <a href="#">Pending Refund</a>
+            </div>
+        </div>
+        <!--AUCTION-->
+        <div class="submenu-item">
+            <a href="#">AUCTION<span class="arrow">></span></a>
+            <div class="submenu">
+                <a href="#">LOADING PERMIT(GOODS)</a>
+                <a href="#">DELIVERY NOTE(GOODS)</a>
+                <a href="#">LOADING PERMIT(CONTAINER)</a>
+                <a href="#">DELIVERY NOTE(CONTAINER)</a>
+            </div>
+        </div>
+        <!--DESTRUCTION-->
+        <div class="submenu-item">
+            <a href="#">DESTRUCTION<span class="arrow">></span></a>
+            <div class="submenu">
+                <a href="#">LOADING PERMIT</a>
+                <a href="#">DELIVERY NOTE</a>
+                <a href="#">GATE IN</a>
+                <a href="#">LOADING PERMIT FINAL</a>
+                <a href="#">DELIVERY NOTE FINAL</a>
+            </div>
+        </div>
         <a href="#">Additional Verification Details</a>
         <a href="#">Approve Stripping</a>
         <a href="#">Approve Delay Gate In</a>
@@ -122,9 +196,20 @@
         <a href="#">Approve Truck Overstay</a>
         <a href="#">Add Seal</a>
         <a href="#">Nomination</a>
-        <a href="#">Change of Destination</a>
+        <!--Change of Destination-->
+        <div class="submenu-item">
+            <a href="#">Change of Destination<span class="arrow">></span></a>
+            <div class="submenu">
+                <a href="#">Initiate Request</a>
+                <a href="#">Approve Request</a>
+                <a href="#">Approve Request Management</a>
+                <a href="#">Apply Approve Request</a>
+            </div>
+        </div>
+        
     </div>
 </div>
+
 
 <!--Import Billing-->
 <div class="sub-menu">
@@ -133,9 +218,30 @@
 <!--Import Billing Dropdown-->
 <div class="dropdown-menu" id="importBillingDropdown">
      <a href="#">Invoice - FCL</a>
-     <a href="#">WAIVER</a>
-     <a href="#">Invoice - LCL</a>
-     <a href="#">CBM_WEIGHT Change Request</a>
+
+     <!--WAIVER-->
+     <div class="submenu-item">
+            <a href="#">WAIVER<span class="arrow">></span></a>
+            <div class="submenu">
+                <a href="#"> Waiver Request</a>
+                <a href="#">Approve Waiver</a>
+                <a href="#">Approve Waiver Admin</a>
+                <a href="#"> Waiver Status</a>
+            </div>
+     </div>
+      <a href="#">Invoice - LCL</a>
+
+      <!--CBM_WEIGHT Change Request-->
+        <div class="submenu-item">
+                <a href="#">CBM_WEIGHT Change Request<span class="arrow">></span></a>
+                <div class="submenu">
+                    <a href="#">Initiate Request</a>
+                    <a href="#">Approve Request</a>
+                    <a href="#">Approve Request Management</a>
+                    <a href="#">Apply Approved Request</a>
+                </div>
+         </div>
+     
      <a href="#">Additional Invoice FCL</a>
      <a href="#">Additional Invoice LCL</a>
      <a href="#">Client Requested Proforma Details</a>
@@ -212,7 +318,15 @@
      <a href="#">LCL/Direct Gate Pass Details</a>
      <a href="#">Empty Container Gate Out Details</a>
      <a href="#">Empty Container Booking Report</a>
-     <a href="#">Delivery Note Details</a>
+     <!--Delivery Note Details-->
+     <div class="submenu-item">
+         <a href="#">Delivery Note Details<span class="arrow">></span></a>
+         <div class="submenu">
+             <a href="#">FCL Delivery Note Details</a>
+             <a href="#">LCL Delivery Note Details</a>
+             <a href="#">Empty Delivery Note Details</a>
+         </div>
+     </div>
      <a href="#">View Uploaded Doc</a>
      <a href="#">Manifested Weight Vs Actual Weight</a>
      <a href="#">Transporter Invoice Details</a>
@@ -299,23 +413,314 @@
 
 <!-- CFS SUB NAVIGATION -->
 <div class="sub-nav" id="cfsSubNav">
-    <a href="#">Masters</a>
-    <a href="#">Gate Management</a>
-    <a href="#">Allocation</a>
-    <a href="#">Repacking</a>
-    <a href="#">Operations Management</a>
-    <a href="#">Transport Management</a>
-    <a href="#">Export Reports</a>
-    <a href="#">Pending</a>
-    <a href="#">Export Billing</a>
-    <a href="#">Strap/Lock Management</a>
+
+    <!-- MASTERS -->
+    <div class="sub-menu">
+        <a href="#" class="sub-menu-title" id="cfsMastersMenu">
+            Masters
+        </a>
+
+        <div class="dropdown-menu" id="cfsMastersDropdown">
+            <a href="#">Customer</a>
+            <a href="#">Vendor</a>
+            <a href="#">Common Rate Master</a>
+            <a href="#">Charge Master</a>
+            <a href="#">Exchange Rate Master</a>
+            <a href="#">Storage Tariff</a>
+            <a href="#">Add/Modify User</a>
+        </div>
+    </div>
+
+
+    <!-- GATE MANAGEMENT -->
+    <div class="sub-menu">
+        <a href="#" class="sub-menu-title" id="gateManagementMenu">
+            Gate Management
+        </a>
+
+        <div class="dropdown-menu" id="gateManagementDropdown">
+            <a href="#">Customer Booking Order</a>
+            <a href="#">Booking In</a>
+            <a href="#">Gate In</a>
+            <a href="#">Offloading Details</a>
+            <a href="#">Add Empty Container</a>
+            <a href="#">Add Full Container</a>
+            <a href="#">Gate Out Container</a>
+            <a href="#">Loading Permit</a>
+        </div>
+    </div>
+
+
+    <!-- ALLOCATION -->
+    <div class="sub-menu">
+        <a href="#" class="sub-menu-title" id="allocationMenu">
+            Allocation
+        </a>
+
+        <div class="dropdown-menu" id="allocationDropdown">
+            <a href="#">Booking Out</a>
+            <!--PRE ALLOCATION-->
+        <div class="submenu-item">
+                <a href="#">PRE ALLOCATION<span class="arrow">></span></a>
+                <div class="submenu">
+                    <a href="#">ADD</a>
+                    <a href="#">MODIFY</a>
+                    <a href="#">Pre Allocation Print</a>
+                    <a href="#">LINK PRE ALLOCATION TO CONTAINER</a>
+                </div>
+        </div>
+            <!--STUFFING-->
+        <div class="submenu-item">
+                <a href="#">Stuffing<span class="arrow">></span></a>
+                <div class="submenu">
+                    <a href="#">ADD</a>
+                    <a href="#">MODIFY</a>
+                    <a href="#">PRINT</a>
+                </div>
+        </div>
+            
+            <a href="#">Client Stuffing Add </a>
+        </div>
+    </div>
+
+
+    <!-- REPACKING -->
+    <div class="sub-menu">
+        <a href="#" class="sub-menu-title" id="repackingMenu">
+            Repacking
+        </a>
+
+        <div class="dropdown-menu" id="repackingDropdown">
+            <a href="#">Add Seal</a>
+            <a href="#">Link Seal To Container</a>
+            <a href="#">Repacking Details</a>
+        </div>
+    </div>
+
+
+    <!-- OPERATIONS MANAGEMENT -->
+    <div class="sub-menu">
+        <a href="#" class="sub-menu-title" id="operationsManagementMenu">
+            Operations Management
+        </a>
+
+        <div class="dropdown-menu" id="operationsManagementDropdown">
+            <a href="#">Remove Details</a>
+            <a href="#">Remove Outward Booking</a>
+            <a href="#">Remove Stuffing</a>
+            <a href="#">Remove Pre Allocation</a>
+            <a href="#">BackDate Reporting/Offloading</a>
+            <a href="#">Shifting of Container</a>
+            <a href="#">Seal Modification</a>
+        </div>
+    </div>
+
+
+    <!-- TRANSPORT MANAGEMENT -->
+    <div class="sub-menu">
+        <a href="#" class="sub-menu-title" id="transportManagementMenu">
+            Transport Management
+        </a>
+
+        <div class="dropdown-menu" id="transportManagementDropdown">
+            <a href="#">Pre Transfer Add</a>
+            <a href="#">Add OutWard EIR</a>
+            <a href="#">Gate Out Container Report</a>
+            <a href="#">VGM Certificate</a>
+            <a href="#">Cancel OutWard EIR</a>
+            <a href="#">Pending Pre Transfer</a>
+        </div>
+    </div>
+
+
+    <!-- EXPORT REPORTS -->
+    <div class="sub-menu">
+        <a href="#" class="sub-menu-title" id="exportReportsMenu">
+            Export Reports
+        </a>
+
+        <div class="dropdown-menu" id="exportReportsDropdown">
+            <a href="#">Cargo Stock Report</a>
+            <a href="#">Shipment Update(Full Ledger)</a>
+            <a href="#">Gate In Report</a>
+            <a href="#">Booking In Report</a>
+            <a href="#">Gate Out Container Report</a>
+            <a href="#">Expecting Cargo Report</a>
+            <a href="#">Container Stock Report</a>
+            <a href="#">Shipment Update </a>
+            <a href="#">Client Wise Stock Report</a>
+            <a href="#">Management Report</a>
+            <a href="#">Empty Container Report</a>
+        </div>
+    </div>
+
+
+    <!-- PENDING -->
+    <div class="sub-menu">
+        <a href="#" class="sub-menu-title" id="pendingMenu">
+            Pending
+        </a>
+
+        <div class="dropdown-menu" id="pendingDropdown">
+            <a href="#">Pending Booking Out</a>
+            <a href="#">Pending Pre Transfer</a>
+            <a href="#">Pending Allocation</a>
+       </div>
+    </div>
+
+
+    <!-- EXPORT BILLING -->
+    <div class="sub-menu">
+        <a href="#" class="sub-menu-title" id="exportBillingMenu">
+            Export Billing
+        </a>
+
+        <div class="dropdown-menu" id="exportBillingDropdown">
+            <a href="#">Invoice</a>
+            <a href="#">Approved Proforma Invoice[Waiting For Posting]</a>
+            <a href="#">Approve Proforma Invoice</a>
+            <a href="#">UnInvoiced Booking</a>
+            <a href="#">Add Transporter Invoice-FULL</a>
+            <a href="#">Add Transporter Invoice-EMPTY</a>
+            <a href="#">Post/View Pending Payables</a>
+            <a href="#">Receipt</a>
+            <a href="#">Approve Receipt</a>
+            <a href="#">Approve Receipt[Waiting For Posting]</a>
+
+        </div>
+    </div>
+
+
+    <!-- STRAP / LOCK MANAGEMENT -->
+    <div class="sub-menu">
+        <a href="#" class="sub-menu-title" id="strapLockMenu">
+            Strap/Lock Management
+        </a>
+
+        <div class="dropdown-menu" id="strapLockDropdown">
+            <a href="#">Strap/Lock Add</a>
+            <a href="#">Issue Lock</a>
+            <a href="#">Strap/Lock Stock</a>
+        </div>
+    </div>
+
 </div>
 
 <!-- ACCOUNTS SUB NAVIGATION -->
 <div class="sub-nav" id="accountsSubNav">
-    <a href="#">Masters</a>
-    <a href="#">Data</a>
-    <a href="#">Reports</a>
+
+    <!-- MASTERS -->
+    <div class="sub-menu">
+        <a href="#" class="sub-menu-title" id="accountsMastersMenu">Masters</a>
+        <div class="dropdown-menu" id="accountsMastersDropdown">
+
+            <a href="#">Parent Group</a>
+            <a href="#">Ledger Group</a>
+            <a href="#">GL Add/Modify</a>
+            <a href="#">Regular Voucher</a>
+            <a href="#">Voucher Control</a>
+        </div>
+    </div>
+
+
+    <!-- DATA -->
+    <div class="sub-menu">
+        <a href="#" class="sub-menu-title" id="accountsDataMenu">Data</a>
+        <div class="dropdown-menu" id="accountsDataDropdown">
+             <!-- Add Voucher -->
+               <div class="submenu-item">
+                <a href="#">Add Voucher<span class="arrow">></span></a>
+                <div class="submenu">
+                    <a href="#">Add Entry</a>
+                    <a href="#">Modify Entry</a>
+                    <a href="#">PrintVoucher</a>
+                    <a href="#">Reverse/Cancel/Duplicate Entry</a>
+                    <a href="#">Upload/Download Document</a>
+                    <a href="#">ExRate Loss/Gain</a>
+                    <a href="#">Net VAT Payable</a>
+
+                </div>
+        </div>
+            <a href="#">Add Voucher</a>
+            <a href="#">Bank Reconciliation</a>
+            <a href="#">Cheque Print</a>
+            <!--Payroll-->
+            <div class="submenu-item">
+                <a href="#">Payroll<span class="arrow">></span></a>
+                <div class="submenu">
+                    <a href="#">Employee Master</a>
+                    <a href="#">Additional Salary(OverTime)</a>
+                    <a href="#">Salary Disbursement Check</a>
+                    <a href="#">Salary Disbursement</a>
+                    <a href="#">Salary Slip Print</a>
+                    <a href="#">Salary EmpWise (Excel)</a>
+                    <a href="#">Compliance Report</a>
+                    <a href="#">Salary EmpWise ( Consolidated Excel)</a>
+                    <a href="#">EmpWise Salary Details</a>
+                    <a href="#">OverTime Employee Wise</a>
+                    <a href="#">Employee  Leave Details</a>
+                </div>
+            </div>
+            <a href="#">Lock/ Unlock Month</a>
+            <a href="#">Account Deactivation</a>
+            <a href="#">Add/Modify/Delete Ledger</a>
+        </div>
+   </div>
+
+
+    <!-- REPORTS -->
+    <div class="sub-menu">
+
+        <a href="#" class="sub-menu-title" id="accountsReportsMenu"> Reports</a>
+        <div class="dropdown-menu" id="accountsReportsDropdown">
+
+            <a href="#">Register Print Outs</a>
+            <a href="#">Cheque No</a>
+            <a href="#">References</a>
+            <a href="#">Ledger Details</a>
+            <!--Outstanding Report-->
+            <div class="submenu-item">
+                <a href="#">Outstanding Report<span class="arrow">></span></a>
+                <div class="submenu">
+                    <a href="#">Party Wise </a>
+                    <a href="#">Age Wise Analysis</a>
+                    <a href="#">VAT Input Report</a>
+                </div>
+            </div> 
+            <!--Statutory Report-->
+            <div class="submenu-item">
+                <a href="#">Statutory Report<span class="arrow">></span></a>
+                <div class="submenu">
+                    <a href="#">Trial Balance</a>
+                    <a href="#">Profit & Loss A/C</a>
+                    <a href="#">Balance Sheet</a>
+                </div>
+            </div>
+            <!--Daily Report-->
+            <div class="submenu-item">
+                <a href="#">Daily Reports<span class="arrow">></span></a>
+                <div class="submenu">
+                    <a href="#">Daily Voucher Entered</a>
+                    <a href="#">No Of Voucher Entered</a>
+                    <!--Sales Register -->
+                    <div class="submenu-item">
+                        <a href="#">Sales Register<span class="arrow">></span></a>
+                        <div class="submenu">
+                            <a href="#">GROSS</a>
+                            <a href="#">NET</a>
+                            <a href="#">VFD Posted Invoices</a>
+                            <a href="#">GROSS[USD]</a>
+                        </div>
+                    </div>
+                    <a href="#">Daily Collection Report</a>
+                    <a href="#">Net Revenue Report</a>
+                    <a href="#">Daily Revenue Report</a>
+                    <a href="#">Waiver Report</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
 
 <!-- DARK BLUE STRIP -->
@@ -626,7 +1031,7 @@ body {
     min-height: 29px;
     padding: 8px 12px !important;
 
-    color: white;
+    color: #FFFACD;
     background: #263b52;
     text-decoration: none;
 
@@ -1021,6 +1426,8 @@ const icdSubNav = document.getElementById("icdSubNav");
 const cfsSubNav = document.getElementById("cfsSubNav");
 const accountsSubNav = document.getElementById("accountsSubNav");
 
+/*ICD DROPDOWNS*/
+
 /* MASTERS DROPDOWN */
 const mastersMenu = document.getElementById("mastersMenu");
 const mastersDropdown = document.getElementById("mastersDropdown");
@@ -1057,6 +1464,47 @@ const yardManagementDropdown = document.getElementById("yardManagementDropdown")
 const assetManagementMenu = document.getElementById("assetManagementMenu");
 const assetManagementDropdown = document.getElementById("assetManagementDropdown");
 
+
+/* CFS DROPDOWNS */
+
+const cfsMastersMenu = document.getElementById("cfsMastersMenu");
+const cfsMastersDropdown = document.getElementById("cfsMastersDropdown");
+
+const gateManagementMenu = document.getElementById("gateManagementMenu");
+const gateManagementDropdown = document.getElementById("gateManagementDropdown");
+
+const allocationMenu = document.getElementById("allocationMenu");
+const allocationDropdown = document.getElementById("allocationDropdown");
+
+const repackingMenu = document.getElementById("repackingMenu");
+const repackingDropdown = document.getElementById("repackingDropdown");
+
+const operationsManagementMenu = document.getElementById("operationsManagementMenu");
+const operationsManagementDropdown = document.getElementById("operationsManagementDropdown");
+
+const transportManagementMenu = document.getElementById("transportManagementMenu");
+const transportManagementDropdown = document.getElementById("transportManagementDropdown");
+
+const exportReportsMenu = document.getElementById("exportReportsMenu");
+const exportReportsDropdown = document.getElementById("exportReportsDropdown");
+
+const pendingMenu = document.getElementById("pendingMenu");
+const pendingDropdown = document.getElementById("pendingDropdown");
+
+const exportBillingMenu = document.getElementById("exportBillingMenu");
+const exportBillingDropdown = document.getElementById("exportBillingDropdown");
+
+const strapLockMenu = document.getElementById("strapLockMenu");
+const strapLockDropdown = document.getElementById("strapLockDropdown");
+ 
+const accountsMastersMenu = document.getElementById("accountsMastersMenu");
+const accountsMastersDropdown =document.getElementById("accountsMastersDropdown");
+
+const accountsDataMenu =document.getElementById("accountsDataMenu");
+const accountsDataDropdown =document.getElementById("accountsDataDropdown");
+
+const accountsReportsMenu =document.getElementById("accountsReportsMenu");
+const accountsReportsDropdown =document.getElementById("accountsReportsDropdown");
 
 
 /* CLOSE MASTERS DROPDOWN */
@@ -1111,6 +1559,77 @@ function closeYardManagementDropdown() {
 function closeAssetManagementDropdown() {
     assetManagementDropdown.style.display = "none";
     assetManagementMenu.classList.remove("active");
+}
+
+/* CLOSE CFS DROPDOWNS */
+
+function closeCfsMastersDropdown() {
+    cfsMastersDropdown.style.display = "none";
+    cfsMastersMenu.classList.remove("active");
+}
+
+function closeGateManagementDropdown() {
+    gateManagementDropdown.style.display = "none";
+    gateManagementMenu.classList.remove("active");
+}
+
+function closeAllocationDropdown() {
+    allocationDropdown.style.display = "none";
+    allocationMenu.classList.remove("active");
+}
+
+function closeRepackingDropdown() {
+    repackingDropdown.style.display = "none";
+    repackingMenu.classList.remove("active");
+}
+
+function closeOperationsManagementDropdown() {
+    operationsManagementDropdown.style.display = "none";
+    operationsManagementMenu.classList.remove("active");
+}
+
+function closeTransportManagementDropdown() {
+    transportManagementDropdown.style.display = "none";
+    transportManagementMenu.classList.remove("active");
+}
+
+function closeExportReportsDropdown() {
+    exportReportsDropdown.style.display = "none";
+    exportReportsMenu.classList.remove("active");
+}
+
+function closePendingDropdown() {
+    pendingDropdown.style.display = "none";
+    pendingMenu.classList.remove("active");
+}
+
+function closeExportBillingDropdown() {
+    exportBillingDropdown.style.display = "none";
+    exportBillingMenu.classList.remove("active");
+}
+
+function closeStrapLockDropdown() {
+    strapLockDropdown.style.display = "none";
+    strapLockMenu.classList.remove("active");
+}
+
+/* CLOSE ACCOUNTS DROPDOWNS*/
+function closeAccountsMastersDropdown() {
+     accountsMastersDropdown.style.display = "none";
+     accountsMastersMenu.classList.remove("active");
+
+}
+
+function closeAccountsDataDropdown() {
+    accountsDataDropdown.style.display = "none";
+    accountsDataMenu.classList.remove("active");
+
+}
+
+function closeAccountsReportsDropdown() {
+    accountsReportsDropdown.style.display = "none";
+    accountsReportsMenu.classList.remove("active");
+
 }
 
 /* ICD OPERATIONS */
@@ -1398,6 +1917,321 @@ assetManagementMenu.addEventListener("click", function (e) {
     }
 });
 
+/* CFS DROPDOWNS */
+
+/* CFS MASTERS */
+
+cfsMastersMenu.addEventListener("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    closeGateManagementDropdown();
+    closeAllocationDropdown();
+    closeRepackingDropdown();
+    closeOperationsManagementDropdown();
+    closeTransportManagementDropdown();
+    closeExportReportsDropdown();
+    closePendingDropdown();
+    closeExportBillingDropdown();
+    closeStrapLockDropdown();
+
+    if (cfsMastersDropdown.style.display === "block") {
+        closeCfsMastersDropdown();
+    } else {
+        cfsMastersDropdown.style.display = "block";
+        cfsMastersMenu.classList.add("active");
+    }
+});
+
+
+/* GATE MANAGEMENT */
+
+gateManagementMenu.addEventListener("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    closeCfsMastersDropdown();
+    closeAllocationDropdown();
+    closeRepackingDropdown();
+    closeOperationsManagementDropdown();
+    closeTransportManagementDropdown();
+    closeExportReportsDropdown();
+    closePendingDropdown();
+    closeExportBillingDropdown();
+    closeStrapLockDropdown();
+
+    if (gateManagementDropdown.style.display === "block") {
+        closeGateManagementDropdown();
+    } else {
+        gateManagementDropdown.style.display = "block";
+        gateManagementMenu.classList.add("active");
+    }
+});
+
+
+/* ALLOCATION */
+
+allocationMenu.addEventListener("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    closeCfsMastersDropdown();
+    closeGateManagementDropdown();
+    closeRepackingDropdown();
+    closeOperationsManagementDropdown();
+    closeTransportManagementDropdown();
+    closeExportReportsDropdown();
+    closePendingDropdown();
+    closeExportBillingDropdown();
+    closeStrapLockDropdown();
+
+    if (allocationDropdown.style.display === "block") {
+        closeAllocationDropdown();
+    } else {
+        allocationDropdown.style.display = "block";
+        allocationMenu.classList.add("active");
+    }
+});
+
+
+/* REPACKING */
+
+repackingMenu.addEventListener("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    closeCfsMastersDropdown();
+    closeGateManagementDropdown();
+    closeAllocationDropdown();
+    closeOperationsManagementDropdown();
+    closeTransportManagementDropdown();
+    closeExportReportsDropdown();
+    closePendingDropdown();
+    closeExportBillingDropdown();
+    closeStrapLockDropdown();
+
+    if (repackingDropdown.style.display === "block") {
+        closeRepackingDropdown();
+    } else {
+        repackingDropdown.style.display = "block";
+        repackingMenu.classList.add("active");
+    }
+});
+
+
+/* OPERATIONS MANAGEMENT */
+
+operationsManagementMenu.addEventListener("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    closeCfsMastersDropdown();
+    closeGateManagementDropdown();
+    closeAllocationDropdown();
+    closeRepackingDropdown();
+    closeTransportManagementDropdown();
+    closeExportReportsDropdown();
+    closePendingDropdown();
+    closeExportBillingDropdown();
+    closeStrapLockDropdown();
+
+    if (operationsManagementDropdown.style.display === "block") {
+        closeOperationsManagementDropdown();
+    } else {
+        operationsManagementDropdown.style.display = "block";
+        operationsManagementMenu.classList.add("active");
+    }
+});
+
+
+/* TRANSPORT MANAGEMENT */
+
+transportManagementMenu.addEventListener("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    closeCfsMastersDropdown();
+    closeGateManagementDropdown();
+    closeAllocationDropdown();
+    closeRepackingDropdown();
+    closeOperationsManagementDropdown();
+    closeExportReportsDropdown();
+    closePendingDropdown();
+    closeExportBillingDropdown();
+    closeStrapLockDropdown();
+
+    if (transportManagementDropdown.style.display === "block") {
+        closeTransportManagementDropdown();
+    } else {
+        transportManagementDropdown.style.display = "block";
+        transportManagementMenu.classList.add("active");
+    }
+});
+
+
+/* EXPORT REPORTS */
+
+exportReportsMenu.addEventListener("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    closeCfsMastersDropdown();
+    closeGateManagementDropdown();
+    closeAllocationDropdown();
+    closeRepackingDropdown();
+    closeOperationsManagementDropdown();
+    closeTransportManagementDropdown();
+    closePendingDropdown();
+    closeExportBillingDropdown();
+    closeStrapLockDropdown();
+
+    if (exportReportsDropdown.style.display === "block") {
+        closeExportReportsDropdown();
+    } else {
+        exportReportsDropdown.style.display = "block";
+        exportReportsMenu.classList.add("active");
+    }
+});
+
+
+/* PENDING */
+
+pendingMenu.addEventListener("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    closeCfsMastersDropdown();
+    closeGateManagementDropdown();
+    closeAllocationDropdown();
+    closeRepackingDropdown();
+    closeOperationsManagementDropdown();
+    closeTransportManagementDropdown();
+    closeExportReportsDropdown();
+    closeExportBillingDropdown();
+    closeStrapLockDropdown();
+
+    if (pendingDropdown.style.display === "block") {
+        closePendingDropdown();
+    } else {
+        pendingDropdown.style.display = "block";
+        pendingMenu.classList.add("active");
+    }
+});
+
+
+/* EXPORT BILLING */
+
+exportBillingMenu.addEventListener("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    closeCfsMastersDropdown();
+    closeGateManagementDropdown();
+    closeAllocationDropdown();
+    closeRepackingDropdown();
+    closeOperationsManagementDropdown();
+    closeTransportManagementDropdown();
+    closeExportReportsDropdown();
+    closePendingDropdown();
+    closeStrapLockDropdown();
+
+    if (exportBillingDropdown.style.display === "block") {
+        closeExportBillingDropdown();
+    } else {
+        exportBillingDropdown.style.display = "block";
+        exportBillingMenu.classList.add("active");
+    }
+});
+
+
+/* STRAP / LOCK MANAGEMENT */
+
+strapLockMenu.addEventListener("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    closeCfsMastersDropdown();
+    closeGateManagementDropdown();
+    closeAllocationDropdown();
+    closeRepackingDropdown();
+    closeOperationsManagementDropdown();
+    closeTransportManagementDropdown();
+    closeExportReportsDropdown();
+    closePendingDropdown();
+    closeExportBillingDropdown();
+
+    if (strapLockDropdown.style.display === "block") {
+        closeStrapLockDropdown();
+    } else {
+        strapLockDropdown.style.display = "block";
+        strapLockMenu.classList.add("active");
+    }
+});
+
+/*  ACCOUNTS DROPDOWNS*/
+
+
+/* ACCOUNTS MASTERS */
+
+accountsMastersMenu.addEventListener("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    closeAccountsDataDropdown();
+    closeAccountsReportsDropdown();
+
+    if (accountsMastersDropdown.style.display === "block") {
+        closeAccountsMastersDropdown();
+    } else {
+        accountsMastersDropdown.style.display = "block";
+        accountsMastersMenu.classList.add("active");
+
+    }
+
+});
+
+
+/* ACCOUNTS DATA */
+
+accountsDataMenu.addEventListener("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    closeAccountsMastersDropdown();
+    closeAccountsReportsDropdown();
+
+    if (accountsDataDropdown.style.display === "block") {
+        closeAccountsDataDropdown();
+
+    } else {
+        accountsDataDropdown.style.display = "block";
+        accountsDataMenu.classList.add("active");
+
+    }
+
+});
+
+
+/* ACCOUNTS REPORTS */
+
+accountsReportsMenu.addEventListener("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    closeAccountsMastersDropdown();
+    closeAccountsDataDropdown();
+
+    if (accountsReportsDropdown.style.display === "block") {
+        closeAccountsReportsDropdown();
+
+    } else {
+        accountsReportsDropdown.style.display = "block";
+        accountsReportsMenu.classList.add("active");
+
+    }
+
+});
+
 
 /* CLOSE ALL DROPDOWNS WHEN CLICKING OUTSIDE */
 document.addEventListener("click", function (e) {
@@ -1447,9 +2281,79 @@ document.addEventListener("click", function (e) {
         closeAssetManagementDropdown();
     }
 
+
+
+        if (!cfsMastersMenu.contains(e.target) &&
+        !cfsMastersDropdown.contains(e.target)) {
+        closeCfsMastersDropdown();
+    }
+
+    if (!gateManagementMenu.contains(e.target) &&
+        !gateManagementDropdown.contains(e.target)) {
+        closeGateManagementDropdown();
+    }
+
+    if (!allocationMenu.contains(e.target) &&
+        !allocationDropdown.contains(e.target)) {
+        closeAllocationDropdown();
+    }
+
+    if (!repackingMenu.contains(e.target) &&
+        !repackingDropdown.contains(e.target)) {
+        closeRepackingDropdown();
+    }
+
+    if (!operationsManagementMenu.contains(e.target) &&
+        !operationsManagementDropdown.contains(e.target)) {
+        closeOperationsManagementDropdown();
+    }
+
+    if (!transportManagementMenu.contains(e.target) &&
+        !transportManagementDropdown.contains(e.target)) {
+        closeTransportManagementDropdown();
+    }
+
+    if (!exportReportsMenu.contains(e.target) &&
+        !exportReportsDropdown.contains(e.target)) {
+        closeExportReportsDropdown();
+    }
+
+    if (!pendingMenu.contains(e.target) &&
+        !pendingDropdown.contains(e.target)) {
+        closePendingDropdown();
+    }
+
+    if (!exportBillingMenu.contains(e.target) &&
+        !exportBillingDropdown.contains(e.target)) {
+        closeExportBillingDropdown();
+    }
+
+    if (!strapLockMenu.contains(e.target) &&
+        !strapLockDropdown.contains(e.target)) {
+        closeStrapLockDropdown();
+    }
+
+        
+    if (!accountsMastersMenu.contains(e.target) &&
+        !accountsMastersDropdown.contains(e.target)) {
+        closeAccountsMastersDropdown();
+
+    }
+
+
+    if (!accountsDataMenu.contains(e.target) &&
+        !accountsDataDropdown.contains(e.target)) {
+         closeAccountsDataDropdown();
+
+    }
+
+
+    if (!accountsReportsMenu.contains(e.target) &&
+        !accountsReportsDropdown.contains(e.target)) {
+         closeAccountsReportsDropdown();
+
+    }
+
 });
-
-
-
 </script>
 
