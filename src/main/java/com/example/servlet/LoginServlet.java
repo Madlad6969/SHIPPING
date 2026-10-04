@@ -22,13 +22,47 @@ public class LoginServlet extends HttpServlet {
   String password = request.getParameter("password");
   String year = request.getParameter("year");
   
-  if(username.equals("admin") && password.equals("admin123") && year.equals("2026")){
-   HttpSession session = request.getSession();
-   session.setAttribute("username", username);
-   session.setAttribute("year", year);
-   response.sendRedirect("home.jsp");
-  }else{
-   response.sendRedirect("login.jsp?error=Invalid username or password");
-  }
+  
+  
+  
+  
+  
+  
+  
+  
+  //if(username.equals("admin") && password.equals("admin123") && year.equals("2026")){
+  // HttpSession session = request.getSession();
+   //session.setAttribute("username", username);
+   //session.setAttribute("year", year);
+   //response.sendRedirect("home.jsp");
+  //}else{
+  // response.sendRedirect("Login.jsp?error=Invalid username or password");
+  //}
+if ("admin".equals(username)
+        && "admin123".equals(password)
+        && "2026".equals(year)) {
+
+    HttpSession session = request.getSession();
+
+    session.setAttribute("username", username);
+    session.setAttribute("year", year);
+    session.setAttribute("password", password);
+    session.setAttribute("loggedIn", true);
+    session.setMaxInactiveInterval(30 * 60); // Set session timeout to 30 minutes
+
+    response.sendRedirect("home.jsp");
+
+} else {
+
+    response.sendRedirect(
+        "Login.jsp?error=Invalid username or password"
+    );
+
+
 }
+
+
+}
+
+
 }

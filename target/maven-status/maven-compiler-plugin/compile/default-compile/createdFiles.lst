@@ -1,2 +1,3 @@
 com/example/servlet/LogoutServlet.class
+com/example/filter/LoginFilter.class
 com/example/servlet/LoginServlet.class
