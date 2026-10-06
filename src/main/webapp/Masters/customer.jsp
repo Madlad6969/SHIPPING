@@ -137,7 +137,7 @@ String contextPath = request.getContextPath(); %>
       <div
         id="addModifySection"
         class="customer-section add-modify-section"
-        style="display: none"
+        
       >
         <!-- CREATION HEADER -->
         <div class="creation-header">
@@ -506,6 +506,181 @@ String contextPath = request.getContextPath(); %>
             </table>
           </div>
         </div>
+
+          <!-- SPECIAL PACKAGE SECTION -->
+    <div id="specialPackageSection" class="inner-tab-content">
+      <div class="tariff-container">
+        <table class="tariff-table">
+          <thead>
+            <tr>
+              <th>Amount</th>
+              <th>Storage</th>
+              <th>Unit Type</th>
+              <th>Consignee</th>
+              <th>Package[Handling,Verification,Corridor Levy]</th>
+              <th class="add-column">
+                <button type="button" id="addSpecialPackageRow" class="btn-add">+</button>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="specialPackageBody">
+            <tr>
+              <td>
+                <input type="number" name="amount" class="input-amount" value="0" min="0" step="0.01" />
+              </td>
+              <td>
+                <select name="storage">
+                  <option value="">--Select--</option>
+                  <option value="">EXCLUDE</option>
+                  <option value="">INCLUDE</option>
+                  
+                  </select>
+              </td>
+              <td>
+                <select name="unitType">
+                  <option value="">--Select--</option>
+                  <option value="">FLAT</option>
+                  <option value="">20FT</option>
+                  <option value="">40FT</option>
+                </select>
+              </td>
+              <td>
+                <input type="text" name="consignee" />
+              </td>
+              <td>
+                <select name="packageType">
+                  <option value="">--Select--</option>
+                  <option value="">EXCLUDE</option>
+                  <option value="">INCLUDE</option>
+                </select>
+              </td>
+              <td class="add-column">
+                <button type="button" class="special-package-remove-btn btn-remove">−</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- UPLOAD TARIFF SECTION -->
+<div id="uploadTariffSection" class="inner-tab-content" style="display: none;">
+  
+  <!-- Sub-header link -->
+  <div class="upload-link-container">
+    <a href="#" id="uploadTariffLink" class="red-upload-link">Upload Tarrif</a>
+  </div>
+
+  <!-- Data Table Container -->
+  <div class="tariff-container">
+    <table class="upload-tariff-table">
+      <thead>
+        <tr>
+          <th style="width: 50%;" class="sortable-header">
+            <div class="header-content">
+              <span>Download</span>
+              <span class="sort-icon">&#x21D5;</span> <!-- Up/Down Arrow Symbol -->
+            </div>
+          </th>
+          <th style="width: 50%;">
+            <div class="header-content">
+              <span class="dropdown-icon">&#x25BC;</span> <!-- Down Triangle Symbol -->
+              <span>Operations</span>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody id="uploadTariffBody">
+        <tr>
+          <td colspan="2" class="empty-table-msg">
+            No data available in table
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+  
+  <!-- UPLOAD DOCUMENT TAB CONTENT -->
+<div id="uploadDocumentSection" class="inner-tab-content" style="display: block;">
+  <div class="doc-table-container">
+    <table class="upload-doc-table" id="uploadDocTable">
+      <thead>
+        <tr>
+          <th style="width: 25%;">Document Name</th>
+          <th style="width: 20%;">Document Number</th>
+          <th style="width: 12%;">Start Date</th>
+          <th style="width: 12%;">Expiry Date</th>
+          <th style="width: 12%;">Upload Document</th>
+          <th style="width: 12%;">Download</th>
+          <th style="width: 7%; text-align: center;">
+            <!-- Plus Icon to Add Rows -->
+            <button type="button" class="btn-icon add-btn" id="addDocRowBtn" title="Add Row">+</button>
+          </th>
+        </tr>
+      </thead>
+      <tbody id="uploadDocBody">
+        <!-- Default Initial Row -->
+        <tr>
+          <td>
+            <input type="text" name="docName" class="form-control" />
+          </td>
+          <td>
+            <input type="text" name="docNumber" class="form-control" />
+          </td>
+          <td>
+            <input type="text" name="startDate" class="form-control date-picker" placeholder="DD/MM/YYYY" />
+          </td>
+          <td>
+            <input type="text" name="expiryDate" class="form-control date-picker" placeholder="DD/MM/YYYY" />
+          </td>
+          <td class="text-center">
+            <a href="#" class="upload-doc-link" onclick="openDocUploadPopup(this); return false;">Upload Doc</a>
+          </td>
+          <td class="text-center">
+            <a href="#" class="download-doc-link">Download</a>
+          </td>
+          <td class="text-center">
+            <!-- Minus Icon to Delete Row -->
+            <button type="button" class="btn-icon remove-btn" onclick="removeDocRow(this)" title="Remove Row">-</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+      <!-- C&F DETAILS CONTENT SECTION -->
+<div id="cfDetailsSection" class="inner-tab-content" style="display: block;">
+  <div class="cf-table-wrapper">
+    <table class="cf-table" id="cfTable">
+      <thead>
+        <tr>
+          <th>Clearing Agent Name</th>
+          <th>ID</th>
+          <th class="action-header">
+            <button type="button" class="btn-action btn-add" id="addCfRowBtn" title="Add Row">+</button>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="cf-row">
+          <td>
+            <input type="text" name="clearingAgentName[]" class="form-input" />
+          </td>
+          <td>
+            <input type="text" name="clearingAgentId[]" class="form-input" />
+          </td>
+          <td class="action-cell">
+            <button type="button" class="btn-action btn-remove" title="Remove Row">-</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
 
         <!-- SUBMIT BUTTON -->
         <div class="submit-row">

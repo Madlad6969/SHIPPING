@@ -1,57 +1,64 @@
-$(document).ready(function () {
+document.addEventListener("DOMContentLoaded", function () {
 
-  // =====================================================
-  // INITIAL PAGE STATE
-  // =====================================================
+  const addModifyTab = document.getElementById("addModifyTab");
+  const addModifySection = document.getElementById("addModifySection");
+  const searchSection = document.getElementById("searchSection");
+  const searchTab = document.getElementById("searchTab");
+  const addCustomer = document.getElementById("addCustomer");
+  const searchCustomerBtn = document.getElementById("searchCustomerBtn");
+  const printCustomer = document.getElementById("printCustomer");
+  
+  // Table Bodies & Add Buttons
+  const tariffBody = document.getElementById("tariffBody");
+  const addTariffRow = document.getElementById("addTariffRow");
+  const storageTariffBody = document.getElementById("storageTariffBody");
+  const addStorageTariffRow = document.getElementById("addStorageTariffRow");
+  const specialPackageBody = document.getElementById("specialPackageBody");
+  const addSpecialPackageRow = document.getElementById("addSpecialPackageRow");
 
-  $("#addModifyTab").hide();
-  $("#addModifySection").hide();
-  $("#searchSection").show();
+  // Document Upload Elements
+  const addDocRowBtn = document.getElementById("addDocRowBtn");
+  const uploadDocBody = document.getElementById("uploadDocBody");
 
+  const submitCustomer = document.getElementById("submitCustomer");
 
-  // =====================================================
-  // CUSTOMER MAIN TABS
-  // =====================================================
+  // Initial Visibility
+  if (addModifyTab) addModifyTab.style.display = "none";
+  if (addModifySection) addModifySection.style.display = "none";
+  if (searchSection) searchSection.style.display = "block";
 
-  $("#searchTab").click(function () {
-    $("#searchSection").show();
-    $("#addModifySection").hide();
+  // Tab Navigation
+  searchTab.addEventListener("click", function () {
+    searchSection.style.display = "block";
+    addModifySection.style.display = "none";
 
-    $("#searchTab").addClass("active");
-    $("#addModifyTab").removeClass("active").hide();
+    searchTab.classList.add("active");
+    addModifyTab.classList.remove("active");
+    addModifyTab.style.display = "none";
   });
 
-  $("#addModifyTab").click(function () {
-    $("#searchSection").hide();
-    $("#addModifySection").show();
+  addModifyTab.addEventListener("click", function () {
+    searchSection.style.display = "none";
+    addModifySection.style.display = "block";
 
-    $("#addModifyTab").addClass("active");
-    $("#searchTab").removeClass("active");
+    addModifyTab.classList.add("active");
+    searchTab.classList.remove("active");
   });
 
+  addCustomer.addEventListener("click", function () {
+    searchSection.style.display = "none";
+    addModifySection.style.display = "block";
 
-  // =====================================================
-  // ADD CUSTOMER BUTTON
-  // =====================================================
-
-  $("#addCustomer").click(function () {
-    $("#searchSection").hide();
-    $("#addModifySection").show();
-
-    $("#addModifyTab").show().addClass("active");
-    $("#searchTab").removeClass("active");
+    addModifyTab.style.display = "block";
+    addModifyTab.classList.add("active");
+    searchTab.classList.remove("active");
   });
 
-
-  // =====================================================
-  // SEARCH CUSTOMER & PRINT
-  // =====================================================
-
-  $("#searchCustomerBtn").click(function () {
-    let customerName = $("#searchCustomerName").val();
-    let customerId = $("#searchCustomerId").val();
-    let tin = $("#searchTin").val();
-    let vrn = $("#searchVrn").val();
+  searchCustomerBtn.addEventListener("click", function () {
+    const customerName = document.getElementById("searchCustomerName").value;
+    const customerId = document.getElementById("searchCustomerId").value;
+    const tin = document.getElementById("searchTin").value;
+    const vrn = document.getElementById("searchVrn").value;
 
     console.log("Customer Name:", customerName);
     console.log("Customer ID:", customerId);
@@ -59,16 +66,12 @@ $(document).ready(function () {
     console.log("VRN:", vrn);
   });
 
-  $("#printCustomer").click(function (e) {
+  printCustomer.addEventListener("click", function (e) {
     e.preventDefault();
     window.print();
   });
 
-
-  // =====================================================
-  // TARIFF ROW BUILDER & HANDLERS
-  // =====================================================
-
+  // 1. TARIFF SECTION HANDLERS
   function createTariffRow() {
     return `
       <tr>
@@ -150,7 +153,7 @@ $(document).ready(function () {
             <option value="Port Corridor levy">Port Corridor levy</option>
             <option value="Port Fuel for Trucks">Port Fuel for Trucks</option>
             <option value="Port Handling Charges">Port Handling Charges</option>
-            <option value="Port IMDG  charges">Port IMDG charges</option>
+            <option value="Port IMDG charges">Port IMDG charges</option>
             <option value="Port IMDG storage charges">Port IMDG storage charges</option>
             <option value="Port Miscelaneous charges">Port Miscelaneous charges</option>
             <option value="Port removal charges">Port removal charges</option>
@@ -200,26 +203,18 @@ $(document).ready(function () {
     `;
   }
 
-  // Initialize initial row
-  $("#tariffBody").empty().append(createTariffRow());
+  if (tariffBody) {
+    tariffBody.innerHTML = "";
+    tariffBody.insertAdjacentHTML("beforeend", createTariffRow());
 
-  // Add Row: Only allows creating 1 row maximum
-  $("#addTariffRow").off("click").on("click", function () {
-    if ($("#tariffBody tr").length < 1) {
-      $("#tariffBody").append(createTariffRow());
-    }
-  });
+    addTariffRow.addEventListener("click", function () {
+      if (tariffBody.querySelectorAll("tr").length < 1) {
+        tariffBody.insertAdjacentHTML("beforeend", createTariffRow());
+      }
+    });
+  }
 
-  // Remove Row: Removes row completely (leaves section blank when last row is removed)
-  $(document).off("click", ".tariff-remove-btn").on("click", ".tariff-remove-btn", function () {
-    $(this).closest("tr").remove();
-  });
-
-
-  // =====================================================
-  // STORAGE TARIFF ROW BUILDER & HANDLERS
-  // =====================================================
-
+  // 2. STORAGE TARIFF SECTION HANDLERS
   function createStorageTariffRow() {
     return `
       <tr>
@@ -236,67 +231,342 @@ $(document).ready(function () {
     `;
   }
 
-  if ($("#storageTariffBody tr").length === 0) {
-    $("#storageTariffBody").append(createStorageTariffRow());
+  if (storageTariffBody) {
+    if (storageTariffBody.querySelectorAll("tr").length === 0) {
+      storageTariffBody.insertAdjacentHTML("beforeend", createStorageTariffRow());
+    }
+
+    addStorageTariffRow.addEventListener("click", function () {
+      if (storageTariffBody.querySelectorAll("tr").length < 1) {
+        storageTariffBody.insertAdjacentHTML("beforeend", createStorageTariffRow());
+      }
+    });
   }
 
-  // Add Row: Only allows creating 1 row maximum
-  $(document).off("click", "#addStorageTariffRow").on("click", "#addStorageTariffRow", function () {
-    if ($("#storageTariffBody tr").length < 1) {
-      $("#storageTariffBody").append(createStorageTariffRow());
+  // 3. SPECIAL PACKAGE SECTION HANDLERS
+  function createSpecialPackageRow() {
+    return `
+      <tr>
+        <td>
+          <input type="number" name="amount" class="input-amount" value="0" min="0" step="0.01">
+        </td>
+        <td>
+                <select name="storage">
+                  <option value="">--Select--</option>
+                  <option value="">EXCLUDE</option>
+                  <option value="">INCLUDE</option>
+                  
+                  </select>
+              </td>
+        <td>
+                <select name="unitType">
+                  <option value="">--Select--</option>
+                  <option value="">FLAT</option>
+                  <option value="">20FT</option>
+                  <option value="">40FT</option>
+                </select>
+              </td>
+        <td>
+          <input type="text" name="consignee">
+        </td>
+        <td>
+                <select name="packageType">
+                  <option value="">--Select--</option>
+                  <option value="">EXCLUDE</option>
+                  <option value="">INCLUDE</option>
+                </select>
+              </td>
+        <td class="add-column">
+          <button type="button" class="special-package-remove-btn btn-remove">−</button>
+        </td>
+      </tr>
+    `;
+  }
+
+  if (specialPackageBody) {
+    if (specialPackageBody.querySelectorAll("tr").length === 0) {
+      specialPackageBody.insertAdjacentHTML("beforeend", createSpecialPackageRow());
+    }
+
+    if (addSpecialPackageRow) {
+      addSpecialPackageRow.addEventListener("click", function () {
+        if (specialPackageBody.querySelectorAll("tr").length < 1) {
+          specialPackageBody.insertAdjacentHTML("beforeend", createSpecialPackageRow());
+        }
+      });
+    }
+  }
+
+  // 4. UPLOAD DOCUMENT SECTION HANDLER
+  if (addDocRowBtn && uploadDocBody) {
+    addDocRowBtn.addEventListener("click", function () {
+      const newRow = document.createElement("tr");
+      newRow.innerHTML = `
+        <td><input type="text" name="docName" class="form-control" /></td>
+        <td><input type="text" name="docNumber" class="form-control" /></td>
+        <td><input type="text" name="startDate" class="form-control date-picker" placeholder="DD/MM/YYYY" /></td>
+        <td><input type="text" name="expiryDate" class="form-control date-picker" placeholder="DD/MM/YYYY" /></td>
+        <td class="text-center">
+          <a href="#" class="upload-doc-link" onclick="openDocUploadPopup(this); return false;">Upload Doc</a>
+        </td>
+        <td class="text-center">
+          <a href="#" class="download-doc-link">Download</a>
+        </td>
+        <td class="text-center">
+          <button type="button" class="btn-icon remove-btn" onclick="removeDocRow(this)" title="Remove Row">-</button>
+        </td>
+      `;
+      uploadDocBody.appendChild(newRow);
+    });
+  }
+
+  // 5. UPLOAD TARIFF HANDLER (Opens Popup Window)
+  const uploadTariffLink = document.getElementById("uploadTariffLink");
+  if (uploadTariffLink) {
+    uploadTariffLink.addEventListener("click", function (e) {
+      e.preventDefault();
+      
+      const popupUrl = "CallUploadCustomer.jsp"; // Adjust path if needed
+      const popupTitle = "Upload Customer Tariff";
+      const width = 650;
+      const height = 250;
+      const left = (window.screen.width - width) / 2;
+      const top = (window.screen.height - height) / 2;
+
+      window.open(
+        popupUrl,
+        popupTitle,
+        `width=${width},height=${height},top=${top},left=${left},resizable=yes,scrollbars=yes,status=no`
+      );
+    });
+  }
+
+  // DELEGATED REMOVE BUTTON EVENT LISTENERS
+  document.addEventListener("click", function (e) {
+    if (e.target.classList.contains("tariff-remove-btn")) {
+      e.target.closest("tr").remove();
+    }
+    if (e.target.classList.contains("storage-tariff-remove-btn")) {
+      e.target.closest("tr").remove();
+    }
+    if (e.target.classList.contains("special-package-remove-btn")) {
+      e.target.closest("tr").remove();
     }
   });
 
-  // Remove Row: Removes row completely (leaves section blank when last row is removed)
-  $(document).off("click", ".storage-tariff-remove-btn").on("click", ".storage-tariff-remove-btn", function () {
-    $(this).closest("tr").remove();
-  });
+  // INNER TABS SWITCHING (Tariff / Storage Tariff / Special Package / Upload Tariff / Upload Document / C&F Details)
+  document.addEventListener("click", function (e) {
+    if (e.target.classList.contains("inner-tab") || e.target.classList.contains("tab")) {
 
+      document.querySelectorAll(".inner-tab, .tab").forEach(function (tab) {
+        tab.classList.remove("active");
+      });
 
-  // =====================================================
-  // INNER TABS SWITCHING
-  // =====================================================
+      e.target.classList.add("active");
 
-  $(document).on("click", ".inner-tab", function () {
-    $(".inner-tab").removeClass("active");
-    $(this).addClass("active");
+      const targetTab = e.target.getAttribute("data-tab");
+      const tabText = e.target.textContent.trim();
 
-    let targetTab = $(this).attr("data-tab");
-    let tabText = $.trim($(this).text());
+      const tariffSec = document.getElementById("tariffSection");
+      const storageTariffSec = document.getElementById("storageTariffSection");
+      const specialPackageSec = document.getElementById("specialPackageSection");
+      const uploadTariffSec = document.getElementById("uploadTariffSection");
+      const uploadDocSec = document.getElementById("uploadDocumentSection");
+      const cfDetailsSec = document.getElementById("cfDetailsSection");
 
-    // Hide all tab sections
-    $("#tariffSection, #storageTariffSection").hide();
+      if (tariffSec) tariffSec.style.display = "none";
+      if (storageTariffSec) storageTariffSec.style.display = "none";
+      if (specialPackageSec) specialPackageSec.style.display = "none";
+      if (uploadTariffSec) uploadTariffSec.style.display = "none";
+      if (uploadDocSec) uploadDocSec.style.display = "none";
+      if (cfDetailsSec) cfDetailsSec.style.display = "none";
 
-    // Support both data-tab attribute or text fallback
-    if (targetTab === "tariffSection" || tabText === "Tariff") {
-      $("#tariffSection").show();
-    } else if (targetTab === "storageTariffSection" || tabText === "Storage Tariff") {
-      $("#storageTariffSection").show();
+      if (targetTab === "tariffSection" || tabText === "Tariff") {
+        if (tariffSec) tariffSec.style.display = "block";
+      } else if (targetTab === "storageTariffSection" || tabText === "Storage Tariff") {
+        if (storageTariffSec) storageTariffSec.style.display = "block";
+      } else if (targetTab === "specialPackageSection" || tabText === "Special Package") {
+        if (specialPackageSec) specialPackageSec.style.display = "block";
+      } else if (targetTab === "uploadTariffSection" || tabText === "Upload Tariff") {
+        if (uploadTariffSec) uploadTariffSec.style.display = "block";
+      } else if (targetTab === "uploadDocumentSection" || tabText === "Upload Document") {
+        if (uploadDocSec) uploadDocSec.style.display = "block";
+      } else if (targetTab === "cfDetailsSection" || tabText === "C&F Details") {
+        if (cfDetailsSec) cfDetailsSec.style.display = "block";
+      }
     }
   });
 
+  // Submit Handler
+  if (submitCustomer) {
+    submitCustomer.addEventListener("click", function () {
+      const customerName = document.getElementById("customerName").value.trim();
+      const address = document.getElementById("address").value.trim();
 
-  // =====================================================
-  // CUSTOMER SUBMIT
-  // =====================================================
+      if (customerName === "") {
+        alert("Please enter Customer Name");
+        document.getElementById("customerName").focus();
+        return;
+      }
 
-  $("#submitCustomer").click(function () {
-    let customerName = $("#customerName").val();
-    let address = $("#address").val();
+      if (address === "") {
+        alert("Please enter Address");
+        document.getElementById("address").focus();
+        return;
+      }
 
-    if ($.trim(customerName) === "") {
-      alert("Please enter Customer Name");
-      $("#customerName").focus();
-      return;
-    }
-
-    if ($.trim(address) === "") {
-      alert("Please enter Address");
-      $("#address").focus();
-      return;
-    }
-
-    alert("Customer information ready to submit.");
-  });
+      alert("Customer information ready to submit.");
+    });
+  }
 
 });
+
+// GLOBAL FUNCTIONS FOR UPLOAD DOCUMENT ROW ACTIONS
+function removeDocRow(button) {
+  const row = button.closest("tr");
+  const tbody = row.parentElement;
+  
+  // Keep at least one row present
+  if (tbody.rows.length > 1) {
+    row.remove();
+  } else {
+    alert("At least one document row is required.");
+  }
+}
+
+function openDocUploadPopup(element) {
+  const popupUrl = "CallUploadCustomer.jsp"; // Adjust path if needed
+  const popupTitle = "Upload Document";
+  const width = 600;
+  const height = 250;
+  const left = (window.screen.width - width) / 2;
+  const top = (window.screen.height - height) / 2;
+
+  window.open(
+    popupUrl,
+    popupTitle,
+    `width=${width},height=${height},top=${top},left=${left},resizable=yes,scrollbars=yes,status=no`
+  );
+}
+
+// JQUERY VERSION
+// $(document).ready(function () {
+//   ...
+//   // UPLOAD TARIFF HANDLER
+//   $(document).on("click", "#uploadTariffLink", function (e) {
+//     e.preventDefault();
+//     const width = 650;
+//     const height = 250;
+//     const left = (window.screen.width - width) / 2;
+//     const top = (window.screen.height - height) / 2;
+//     window.open(
+//       "form/CallUploadCustomer.jsp",
+//       "Upload Customer Tariff",
+//       `width=${width},height=${height},top=${top},left=${left},resizable=yes,scrollbars=yes,status=no`
+//     );
+//   });
+//   ...
+// });
+
+// JQUERY VERSION (COMMENTED OUT REFERENCE)
+// $(document).ready(function () {
+//   $("#addModifyTab").hide();
+//   $("#addModifySection").hide();
+//   $("#searchSection").show();
+//   $("#searchTab").click(function () {
+//     $("#searchSection").show();
+//     $("#addModifySection").hide();
+//     $("#searchTab").addClass("active");
+//     $("#addModifyTab").removeClass("active").hide();
+//   });
+//   $("#addModifyTab").click(function () {
+//     $("#searchSection").hide();
+//     $("#addModifySection").show();
+//     $("#addModifyTab").addClass("active");
+//     $("#searchTab").removeClass("active");
+//   });
+//   $("#addCustomer").click(function () {
+//     $("#searchSection").hide();
+//     $("#addModifySection").show();
+//     $("#addModifyTab").show().addClass("active");
+//     $("#searchTab").removeClass("active");
+//   });
+//   $("#searchCustomerBtn").click(function () {
+//     let customerName = $("#searchCustomerName").val();
+//     let customerId = $("#searchCustomerId").val();
+//     let tin = $("#searchTin").val();
+//     let vrn = $("#searchVrn").val();
+//     console.log(customerName, customerId, tin, vrn);
+//   });
+//   $("#printCustomer").click(function (e) {
+//     e.preventDefault();
+//     window.print();
+//   });
+//   // SPECIAL PACKAGE ROW BUILDER & HANDLERS
+//   function createSpecialPackageRow() {
+//     return `
+//       <tr>
+//         <td><input type="number" name="amount" class="input-amount" value="0" min="0" step="0.01"></td>
+//         <td><select name="storage"><option value="">--Select--</option></select></td>
+//         <td><select name="unitType"><option value="">--Select--</option></select></td>
+//         <td><input type="text" name="consignee"></td>
+//         <td><select name="packageType"><option value="">--Select--</option></select></td>
+//         <td class="add-column">
+//           <button type="button" class="special-package-remove-btn btn-remove">−</button>
+//         </td>
+//       </tr>
+//     `;
+//   }
+//   if ($("#specialPackageBody tr").length === 0) {
+//     $("#specialPackageBody").append(createSpecialPackageRow());
+//   }
+//   $(document).off("click", "#addSpecialPackageRow").on("click", "#addSpecialPackageRow", function () {
+//     if ($("#specialPackageBody tr").length < 1) {
+//       $("#specialPackageBody").append(createSpecialPackageRow());
+//     }
+//   });
+//   $(document).off("click", ".special-package-remove-btn").on("click", ".special-package-remove-btn", function () {
+//     $(this).closest("tr").remove();
+//   });
+//   // UPLOAD TARIFF HANDLER
+//   $(document).on("click", "#uploadTariffLink", function (e) {
+//     e.preventDefault();
+//     console.log("Upload Tariff link clicked");
+//   });
+//   // INNER TABS SWITCHING
+//   $(document).on("click", ".inner-tab, .tab", function () {
+//     $(".inner-tab, .tab").removeClass("active");
+//     $(this).addClass("active");
+//     let targetTab = $(this).attr("data-tab");
+//     let tabText = $.trim($(this).text());
+//     $("#tariffSection, #storageTariffSection, #specialPackageSection, #uploadTariffSection, #uploadDocumentSection, #cfDetailsSection").hide();
+//     if (targetTab === "tariffSection" || tabText === "Tariff") {
+//       $("#tariffSection").show();
+//     } else if (targetTab === "storageTariffSection" || tabText === "Storage Tariff") {
+//       $("#storageTariffSection").show();
+//     } else if (targetTab === "specialPackageSection" || tabText === "Special Package") {
+//       $("#specialPackageSection").show();
+//     } else if (targetTab === "uploadTariffSection" || tabText === "Upload Tariff") {
+//       $("#uploadTariffSection").show();
+//     } else if (targetTab === "uploadDocumentSection" || tabText === "Upload Document") {
+//       $("#uploadDocumentSection").show();
+//     } else if (targetTab === "cfDetailsSection" || tabText === "C&F Details") {
+//       $("#cfDetailsSection").show();
+//     }
+//   });
+//   $("#submitCustomer").click(function () {
+//     let customerName = $("#customerName").val();
+//     let address = $("#address").val();
+//     if ($.trim(customerName) === "") {
+//       alert("Please enter Customer Name");
+//       $("#customerName").focus();
+//       return;
+//     }
+//     if ($.trim(address) === "") {
+//       alert("Please enter Address");
+//       $("#address").focus();
+//       return;
+//     }
+//     alert("Customer information ready to submit.");
+//   });
+// });

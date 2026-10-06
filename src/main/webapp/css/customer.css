@@ -1,145 +1,92 @@
 .customer-page {
   width: 100%;
-
   box-sizing: border-box;
-
   font-family: Arial, Helvetica, sans-serif;
-
   font-size: 13px;
-
   color: #333;
-
   font-weight: bold;
 }
 
-/* =========================================================
-   CUSTOMER TABS
-   ========================================================= */
-
 .customer-tabs {
+  display: flex;             /* 1. Aligns tabs horizontally side-by-side */
+  align-items: flex-end;     /* 2. Aligns tabs along the bottom edge */
   height: 34px;
-
   background: #7eb4d8;
-
   border-top: 1px solid #438ed0;
-
   border-bottom: 1px solid #438ed0;
-
   margin-top: 10px;
-
   box-sizing: border-box;
+  padding-left: 6px;         /* Added optional padding from left edge */
 }
 
 .customer-tab {
   height: 30px;
-
   padding: 0 14px;
-
   background: #e7f2fb;
-
   border: 1px solid #73aee0;
-
   border-radius: 5px 5px 0 0;
-
   color: #2472a9;
-
   border-bottom: none;
-
   font-size: 14px;
-
   font-weight: bold;
-
   cursor: pointer;
+  margin-right: 4px;         /* 3. Adds spacing between the two tabs */
 }
 
 .customer-tab.active {
   background: #ffffff;
-
   color: #e87500;
+  position: relative;
+  top: 1px;                  /* 4. Overlaps bottom border seamlessly */
 }
-
-/* =========================================================
-   CUSTOMER SECTION
-   ========================================================= */
-
 .customer-section {
   margin-top: 9px;
-
   border: 2px solid #000000;
-
   min-height: 350px;
-
   background: #ffffff;
-
   box-sizing: border-box;
-
   overflow: hidden;
 }
 
 #searchSection,
 #addModifySection {
   width: 100%;
-
   clear: both;
-
   position: relative;
 }
 
-/* =========================================================
-   SEARCH PANEL
-   ========================================================= */
-
 .search-panel {
   border: 2px solid #7db3e4;
-
   margin-top: 10px;
-
   width: 100%;
-
   min-height: 58px;
-
   box-sizing: border-box;
 }
 
 .search-title {
   height: 24px;
-
   background: linear-gradient(to bottom, #aec7dc, #91aec8);
-
   text-align: center;
-
   line-height: 24px;
-
   color: #000;
-
   font-weight: bold;
 }
 
 .search-row {
   height: 34px;
-
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
-
   gap: 20px;
-
   padding: 0 10px;
-
   box-sizing: border-box;
 }
 
 .search-field {
   flex: 1;
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   gap: 3px;
 }
 
@@ -149,29 +96,21 @@
 
 .search-field input {
   width: 155px;
-
   height: 18px;
-
   box-sizing: border-box;
-
   border: 1px solid #a7cdf0;
-
   border-radius: 5px;
-
   background: #fff;
 }
 
 .print-customer {
   flex: 0 0 auto;
-
   margin-left: 10px;
-
   margin-right: 0;
 }
 
 .print-customer a {
   color: #333;
-
   text-decoration: underline;
 }
 
@@ -181,36 +120,23 @@
 
 .search-buttons {
   height: 55px;
-
   display: flex;
-
   justify-content: center;
-
   align-items: center;
-
   gap: 5px;
 }
 
 .search-buttons button,
 .submit-row button {
   min-width: 62px;
-
   height: 26px;
-
   padding: 0 12px;
-
   border: 1px solid #b5d4ef;
-
   border-radius: 5px;
-
   background: linear-gradient(to bottom, #f3f9fd, #e1effa);
-
   color: #2775ac;
-
   font-size: 11px;
-
   font-weight: bold;
-
   cursor: pointer;
 }
 
@@ -219,59 +145,37 @@
   background: #d7eafa;
 }
 
-/* =========================================================
-   CUSTOMER TABLE
-   ========================================================= */
-
 .customer-table-container {
   margin: 0 5px;
-
   overflow-x: auto;
-
   border-bottom: 2px solid #438ed0;
 }
 
 .customer-table {
   width: 100%;
-
   border-collapse: collapse;
-
   table-layout: fixed;
 }
 
 .customer-table th {
   height: 30px;
-
   background: linear-gradient(to bottom, #dcebf8, #c5ddf0);
-
   border-top: 2px solid #438ed0;
-
   border-right: 1px solid #b6d2e8;
-
   color: #2671a6;
-
   font-weight: bold;
-
   text-align: center;
-
   box-sizing: border-box;
 }
 
 .customer-table td {
   height: 22px;
-
   border-bottom: 1px dotted #a7c7e2;
-
   border-right: 1px dotted #a7c7e2;
-
   text-align: center;
-
   white-space: nowrap;
-
   overflow: hidden;
-
   text-overflow: ellipsis;
-
   padding: 0 4px;
 }
 
@@ -281,96 +185,58 @@
 
 .sort-arrow {
   display: block;
-
   font-size: 9px;
-
   line-height: 8px;
-
   color: #579bd4;
 }
-
-/* =========================================================
-   ADD / MODIFY SECTION
-   ========================================================= */
 
 .add-modify-section {
   min-height: 500px;
 }
 
-/* =========================================================
-   CREATION HEADER
-   ========================================================= */
-
 .creation-header {
   height: 30px;
-
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
-
   padding: 0 10px;
-
   background: linear-gradient(to bottom, #469cec, #2784e6);
-
   box-sizing: border-box;
-
   position: relative;
 }
 
 .creation-left {
   display: flex;
-
   align-items: center;
-
   gap: 4px;
-
   z-index: 2;
 }
 
 .creation-right {
   display: flex;
-
   align-items: center;
-
   gap: 4px;
-
   z-index: 2;
 }
 
 .creation-title {
   position: absolute;
-
   left: 50%;
-
   transform: translateX(-50%);
-
   color: #000;
-
   font-weight: bold;
-
   white-space: nowrap;
-
   pointer-events: none;
 }
 
 .creation-header select,
 .creation-header input {
   height: 19px;
-
   box-sizing: border-box;
-
   border: 1px solid #9abddc;
-
   border-radius: 4px;
-
   font-size: 11px;
 }
-
-/* =========================================================
-   CUSTOMER FORM
-   ========================================================= */
 
 .customer-form {
   border-bottom: 1px solid #9bc4e5;
@@ -378,27 +244,18 @@
 
 .form-row {
   min-height: 31px;
-
   display: flex;
-
   align-items: center;
-
   border-bottom: 1px dotted #b4cce0;
-
   box-sizing: border-box;
-
   justify-content: space-between;
 }
 
 .form-field {
   display: flex;
-
   align-items: center;
-
   gap: 4px;
-
   padding-right: 20px;
-
   box-sizing: border-box;
 }
 
@@ -409,17 +266,11 @@
 .form-field input,
 .form-field select {
   width: 185px;
-
   height: 20px;
-
   box-sizing: border-box;
-
   border: 1px solid #a8cce9;
-
   border-radius: 4px;
-
   background: #ffffff;
-
   font-size: 11px;
 }
 
@@ -439,203 +290,114 @@
   color: red;
 }
 
-/* =========================================================
-   ADDRESS ROW
-   ========================================================= */
-
 .address-row {
   min-height: 48px;
-
   display: flex;
-
   align-items: center;
 }
 
 .address-field {
   display: flex;
-
   align-items: center;
-
   justify-content: flex-start;
-
   gap: 4px;
-
   padding: 4px 4px 4px 10px;
-
   box-sizing: border-box;
 }
 
 .address-field textarea,
 .address-field input {
   width: 300px;
-
   height: 32px;
-
   resize: none;
-
   border: 1px solid #a8cce9;
-
   border-radius: 4px;
-
   font-size: 11px;
 }
 
-/* =========================================================
-   INNER TAB STRIP
-   ========================================================= */
-
 .inner-tabs {
   height: 34px;
-
   margin-top: 50px;
-
   background: #1b689b;
-
   border-top: none;
-
   border-bottom: 1px solid #1b689b;
-
   display: flex;
-
   align-items: flex-end;
-
   box-sizing: border-box;
 }
 
 .inner-tab {
   height: 29px;
-
   padding: 0 13px;
-
   border: 1px solid #8db9dd;
-
   border-bottom: none;
-
   border-radius: 5px 5px 0 0;
-
   background: #e7f2fb;
-
   color: #2775ac;
-
   font-size: 13px;
-
   font-weight: bold;
-
   cursor: pointer;
 }
 
 .inner-tab.active {
   background: #ffffff;
-
   color: #e87500;
 }
 
-/* =========================================================
-   TARIFF SECTION
-   ========================================================= */
-
 .tariff-container {
   margin-top: 20px;
-
   min-height: 110px;
-
   width: 100%;
-
   box-sizing: border-box;
-
   overflow-x: auto;
-
   border: 1px solid #7db3e4;
 }
 
-/* =========================================================
-   TARIFF TABLE
-   ========================================================= */
-
 .tariff-table {
   width: 100%;
-
   border-collapse: collapse;
-
   table-layout: fixed;
-
   font-family: Arial, Helvetica, sans-serif;
-
   font-size: 11px;
 }
 
-/* Tariff Header */
-
 .tariff-table th {
   height: 36px;
-
   padding: 0 4px;
-
   background: linear-gradient(to bottom, #aec7dc, #91aec8);
-
   border-right: 1px solid #b5cce0;
-
   border-bottom: 1px solid #7d9fbd;
-
   text-align: center;
-
   vertical-align: middle;
-
   color: #000;
-
   font-size: 13px;
-
   font-weight: bold;
-
   box-sizing: border-box;
 }
-
-/* Tariff Rows */
 
 .tariff-table td {
   height: 25px;
-
   padding: 2px 4px;
-
   border-right: 1px solid #d0e0ee;
-
   border-bottom: 1px dotted #a7c7e2;
-
   text-align: center;
-
   vertical-align: middle;
-
   box-sizing: border-box;
 }
-
-/* =========================================================
-   TARIFF INPUTS / SELECTS
-   ========================================================= */
 
 .tariff-table select,
 .tariff-table input {
   width: 100%;
-
   height: 29px;
-
   padding: 1px 4px;
-
   box-sizing: border-box;
-
   border: 1px solid #a7c9e8;
-
   border-radius: 5px;
-
   background: #ffffff;
-
   font-family: Arial, Helvetica, sans-serif;
-
   font-size: 13px;
-
   color: #333;
 }
-
-/* Tariff Specific Input Classes */
 
 .tariff-table .charge-name {
   width: 100%;
@@ -647,7 +409,6 @@
 
 .tariff-table .unit-rate {
   width: 100%;
-
   text-align: right;
 }
 
@@ -657,17 +418,12 @@
 
 .tariff-table .applicable-days {
   width: 100%;
-
   text-align: center;
 }
 
 .tariff-table .consignee-agent {
   width: 100%;
 }
-
-/* =========================================================
-   TARIFF COLUMN WIDTHS
-   ========================================================= */
 
 .tariff-table th:nth-child(1),
 .tariff-table td:nth-child(1) {
@@ -686,12 +442,12 @@
 
 .tariff-table th:nth-child(4),
 .tariff-table td:nth-child(4) {
-  width: 9%;
+  width: 18%;
 }
 
 .tariff-table th:nth-child(5),
 .tariff-table td:nth-child(5) {
-  width: 16%;
+  width: 26%;
 }
 
 .tariff-table th:nth-child(6),
@@ -704,43 +460,23 @@
   width: 35px;
 }
 
-/* =========================================================
-   PLUS / MINUS COLUMN
-   ========================================================= */
-
 .add-column {
   width: 35px !important;
-
   text-align: center !important;
 }
 
-/* =========================================================
-   PLUS BUTTON
-   ========================================================= */
-
 #addTariffRow {
   width: 18px;
-
   height: 18px;
-
   padding: 0;
-
   margin: 0;
-
   border: none;
-
   border-radius: 4px;
-
   background: #4d82d8;
-
   color: white;
-
   font-size: 16px;
-
   font-weight: bold;
-
   line-height: 17px;
-
   cursor: pointer;
 }
 
@@ -748,34 +484,19 @@
   background: #3972c9;
 }
 
-/* =========================================================
-   DYNAMIC TARIFF ROW BUTTONS
-   ========================================================= */
-
 .tariff-add-btn,
 .tariff-remove-btn {
   width: 18px;
-
   height: 18px;
-
   padding: 0;
-
   margin: 0;
-
   border: none;
-
   border-radius: 4px;
-
   background: #4d82d8;
-
   color: #ffffff;
-
   font-size: 16px;
-
   font-weight: bold;
-
   line-height: 17px;
-
   cursor: pointer;
 }
 
@@ -784,41 +505,294 @@
   background: #3972c9;
 }
 
-/* =========================================================
-   SUBMIT BUTTON
-   ========================================================= */
+/* Sub-header Link */
+.upload-link-container {
+  padding: 8px 10px;
+}
+
+.red-upload-link {
+  color: #d93025;
+  font-weight: bold;
+  font-size: 13px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.red-upload-link:hover {
+  color: #a81c12;
+}
+
+/* Upload Tariff Table Styling */
+.upload-tariff-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #3175b1;
+  margin-bottom: 20px;
+}
+
+.upload-tariff-table th {
+  background: linear-gradient(to bottom, #e3f0fb 0%, #cbe3f7 100%);
+  color: #1a4168;
+  font-weight: bold;
+  padding: 6px 10px;
+  border-bottom: 1px solid #3175b1;
+  border-right: 1px solid #b2d1ed;
+  text-align: center;
+}
+
+.upload-tariff-table th:last-child {
+  border-right: none;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.sort-icon {
+  font-size: 11px;
+  color: #4b84b4;
+}
+
+.dropdown-icon {
+  font-size: 9px;
+  color: #4b84b4;
+}
+
+/* Empty Table Row Styling */
+.upload-tariff-table td.empty-table-msg {
+  text-align: center;
+  padding: 12px 10px;
+  color: #333333;
+  background-color: #ffffff;
+}
+
+/* ==========================================================================
+   Upload Document Section Styling
+   ========================================================================== */
+
+/* Container and Table Layout */
+.doc-table-container {
+  width: 100%;
+  margin-top: 10px;
+  overflow-x: auto;
+}
+
+.upload-doc-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  border: 1px solid #a6c2d7;
+}
+
+/* Header Gradient & Typography */
+.upload-doc-table thead th {
+  background: linear-gradient(to bottom, #b5d1e8 0%, #8caec9 100%);
+  color: #000;
+  font-weight: bold;
+  padding: 6px 8px;
+  border: 1px solid #91b3cf;
+  text-align: left;
+  white-space: nowrap;
+}
+
+/* Table Body Cells */
+.upload-doc-table tbody td {
+  padding: 6px 8px;
+  border: 1px solid #d0dbe5;
+  background-color: #fcfdfe;
+  vertical-align: middle;
+}
+
+/* Rounded Input Controls */
+.upload-doc-table input.form-control {
+  width: 100%;
+  padding: 3px 6px;
+  border: 1px solid #9db5c8;
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-size: 12px;
+  outline: none;
+}
+
+.upload-doc-table input.form-control:focus {
+  border-color: #4a90e2;
+}
+
+/* Underlined Links for Upload and Download */
+.upload-doc-link, .download-doc-link {
+  color: #333;
+  text-decoration: underline;
+  font-size: 12px;
+}
+
+.upload-doc-link:hover, .download-doc-link:hover {
+  color: #0056b3;
+}
+
+/* Plus / Minus Action Icon Buttons */
+.btn-icon {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  line-height: 14px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.add-btn {
+  background-color: #3b82f6; /* Blue Plus Button */
+}
+
+.add-btn:hover {
+  background-color: #2563eb;
+}
+
+.remove-btn {
+  background-color: #4b7092; /* Blue-Gray Minus Button */
+}
+
+.remove-btn:hover {
+  background-color: #37526d;
+}
+
+/* ==========================================================================
+   C&F Details Section Styling (Added & Updated)
+   ========================================================================== */
+
+.cf-table-wrapper {
+  width: 100%;
+  margin-top: 10px;
+  overflow-x: auto;
+}
+
+.cf-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  border: 1px solid #7db3e4;
+}
+
+.cf-table thead th {
+  height: 26px;
+  background: linear-gradient(to bottom, #aec7dc 0%, #91aec8 100%);
+  color: #000000;
+  font-weight: bold;
+  padding: 4px 8px;
+  border: 1px solid #7d9fbd;
+  text-align: left;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.cf-table th:nth-child(1),
+.cf-table td:nth-child(1) {
+  width: 70%;
+}
+
+.cf-table th:nth-child(2),
+.cf-table td:nth-child(2) {
+  width: 25%;
+}
+
+.cf-table th.action-header,
+.cf-table td.action-cell {
+  width: 5%;
+  text-align: center;
+}
+
+.cf-table tbody td {
+  padding: 4px 8px;
+  border-right: 1px solid #d0e0ee;
+  border-bottom: 1px dotted #a7c7e2;
+  background-color: #ffffff;
+  vertical-align: middle;
+}
+
+.cf-table .form-input {
+  width: 100%;
+  max-width: 280px;
+  height: 22px;
+  padding: 2px 6px;
+  border: 1px solid #a8cce9;
+  border-radius: 10px;
+  background: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.cf-table .form-input:focus {
+  border-color: #4a90e2;
+}
+
+.btn-action {
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 16px;
+  text-align: center;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-add {
+  background-color: #4d82d8;
+}
+
+.btn-add:hover {
+  background-color: #3972c9;
+}
+
+.btn-remove {
+  background-color: #4d82d8;
+}
+
+.btn-remove:hover {
+  background-color: #3972c9;
+}
+
+/* ==========================================================================
+   Shared Form & Responsive Layout
+   ========================================================================== */
 
 .submit-row {
   height: 55px;
-
   display: flex;
-
   justify-content: center;
-
   align-items: center;
 }
 
 .submit-row button {
   min-width: 62px;
-
   height: 26px;
-
   padding: 0 12px;
-
   border: 1px solid #b5d4ef;
-
   border-radius: 5px;
-
   background: linear-gradient(to bottom, #f3f9fd, #e1effa);
-
   color: #2775ac;
-
   font-family: Arial, Helvetica, sans-serif;
-
   font-size: 11px;
-
   font-weight: bold;
-
   cursor: pointer;
 }
 
@@ -826,16 +800,10 @@
   background: #d7eafa;
 }
 
-/* =========================================================
-   RESPONSIVE - 1200px
-   ========================================================= */
-
 @media (max-width: 1200px) {
   .search-row {
     flex-wrap: wrap;
-
     min-height: 60px;
-
     padding: 6px;
   }
 
@@ -852,14 +820,9 @@
   }
 }
 
-/* =========================================================
-   RESPONSIVE - 700px
-   ========================================================= */
-
 @media (max-width: 700px) {
   .search-field {
     width: 100%;
-
     justify-content: space-between;
   }
 
